@@ -1,5 +1,6 @@
 package com.example.ferdilarahmi.calculator;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -23,12 +25,15 @@ public class MainActivity extends AppCompatActivity {
     EditText etTwo;
     @Bind(R.id.btn_add)
     Button btnAdd;
-    @Bind(R.id.et_three)
-    EditText etThree;
-    @Bind(R.id.btn_res)
-    Button btnRes;
+    @Bind(R.id.btn_substract)
+    Button btnSubstract;
+    @Bind(R.id.btn_multiply)
+    Button btnMultiply;
+    @Bind(R.id.btn_divided)
+    Button btnDivided;
     @Bind(R.id.tv_res)
     TextView tvRes;
+    Boolean isResumeFrontBackground = false ;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,37 +52,27 @@ public class MainActivity extends AppCompatActivity {
         });*/
     }
 
-    @OnClick(R.id.btn_add)
-    void add(){
-        if(etThree.getVisibility()==View.VISIBLE){
-            etThree.setVisibility(View.GONE);
-            etThree.setText("");
-            btnAdd.setText("+");
-        }else{
-            etThree.setVisibility(View.VISIBLE);
-            btnAdd.setText("-");
-        }
-    }
-    @OnClick(R.id.btn_res)
-    void res(){
-        int int1=0;
-        int int2=0;
-        int int3=0;
-        if(!etOne.getText().toString().equals("")){
-            int1 = Integer.parseInt(etOne.getText().toString());
-        }
-        if(!etTwo.getText().toString().equals("")){
-            int2 = Integer.parseInt(etTwo.getText().toString());
-        }
-        if(!etThree.getText().toString().equals("")){
-            int3 = Integer.parseInt(etThree.getText().toString());
-        }
-        int result1 = (int1 - (int1*int2/100));
-        int result2 = (result1 - (result1*int3/100));
-        tvRes.setText(String.valueOf(result2));
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 
-            /*@OnClick(R.id.btn_add)
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(isResumeFrontBackground)
+            Toast.makeText(this, "On Resume Called", Toast.LENGTH_SHORT).show();
+            isResumeFrontBackground = true;
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        etOne.setText("");
+        etTwo.setText("");
+    }
+
+    /*@OnClick(R.id.btn_add)
             void add(){
                 int int1 = Integer.parseInt(etOne.getText().toString());
                 int int2 = Integer.parseInt(etTwo.getText().toString());
@@ -85,21 +80,25 @@ public class MainActivity extends AppCompatActivity {
                 tvRes.setText(String.valueOf(result));
             }*/
 
-    /*@OnClick({R.id.btn_add, R.id.btn_substract, R.id.btn_multiply, R.id.btn_divided})
-    void calculate(View view){
+    @OnClick({R.id.btn_add, R.id.btn_substract, R.id.btn_multiply, R.id.btn_divided})
+    void calculate(View view) {
         int int1 = Integer.parseInt(etOne.getText().toString());
         int int2 = Integer.parseInt(etTwo.getText().toString());
         int result = 0;
         switch (view.getId()) {
-            case R.id.btn_add : result = int1 + int2;
+            case R.id.btn_add:
+                result = int1 + int2;
                 break;
-            case R.id.btn_substract : result = int1 - int2;
+            case R.id.btn_substract:
+                result = int1 - int2;
                 break;
-            case R.id.btn_multiply : result = int1 * int2;
+            case R.id.btn_multiply:
+                result = int1 * int2;
                 break;
-            case R.id.btn_divided : result = int1 / int2;
+            case R.id.btn_divided:
+                result = int1 / int2;
                 break;
         }
         tvRes.setText(String.valueOf(result));
-    }*/
+    }
 }

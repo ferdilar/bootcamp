@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/et_one"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_one"
+            android:inputType="number"
+            android:layout_margin="10dp"/>
+        <EditText
+            android:id="@+id/et_two"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_two"
+            android:inputType="number"
+            android:layout_margin="10dp"/>
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="10dp"
+            android:text="+"/>
+        <EditText
+            android:id="@+id/et_three"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_three"
+            android:inputType="number"
+            android:layout_margin="10dp"
+            android:visibility="visible"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_res"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="="
+        android:layout_margin="10dp"/>
+    <TextView
+        android:id="@+id/tv_res"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="50sp"
+        android:text="0"
+        android:gravity="center"
+        android:layout_margin="10dp"/>
+</LinearLayout>

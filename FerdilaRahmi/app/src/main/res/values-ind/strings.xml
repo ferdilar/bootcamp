@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Ferdila Rahmi</string>
+    <string name="your_name">ketik nama anda</string>
+    <string name="enter">masuk</string>
+    <string name="welcome">Selamat Datang!</string>
+    <string name="greet">berikut profil singkat saya</string>
+    <string name="personal">Data Pribadi</string>
+    <string name="edu">Pendidikan</string>
+    <string name="course">Pelatihan</string>
+</resources>

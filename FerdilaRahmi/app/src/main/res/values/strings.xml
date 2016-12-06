@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Ferdila Rahmi</string>
+    <string name="your_name">type your name</string>
+    <string name="enter">enter</string>
+    <string name="welcome">Welcome! </string>
+    <string name="greet">here is my short profile</string>
+    <string name="personal">personal</string>
+    <string name="edu">edu</string>
+    <string name="course">course</string>
+</resources>

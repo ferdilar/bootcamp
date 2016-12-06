@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kalkulator</string>
+    <string name="input_one">harga</string>
+    <string name="input_two">diskon 1</string>
+    <string name="input_three">diskon 2</string>
+</resources>

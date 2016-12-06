@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Calculator</string>
-    <string name="input_one">price</string>
-    <string name="input_two">discount 1</string>
-    <string name="input_three">discount 2</string>
+    <string name="input_one">input 1</string>
+    <string name="input_two">input 2</string>
 </resources>
